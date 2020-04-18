@@ -228,7 +228,7 @@ namespace SqlKata
             return Or().WhereFalse(column);
         }
 
-        public Q WhereLike(string column, string value, bool caseSensitive = false)
+        public Q WhereLike(string column, object value, bool caseSensitive = false, string escapeCharacter = null)
         {
             return AddComponent("where", new BasicStringCondition
             {
@@ -236,26 +236,27 @@ namespace SqlKata
                 Column = column,
                 Value = value,
                 CaseSensitive = caseSensitive,
+                EscapeCharacter = escapeCharacter,
                 IsOr = GetOr(),
                 IsNot = GetNot(),
             });
         }
 
-        public Q WhereNotLike(string column, string value, bool caseSensitive = false)
+        public Q WhereNotLike(string column, object value, bool caseSensitive = false, string escapeCharacter = null)
         {
-            return Not().WhereLike(column, value, caseSensitive);
+            return Not().WhereLike(column, value, caseSensitive, escapeCharacter);
         }
 
-        public Q OrWhereLike(string column, string value, bool caseSensitive = false)
+        public Q OrWhereLike(string column, object value, bool caseSensitive = false, string escapeCharacter = null)
         {
-            return Or().WhereLike(column, value, caseSensitive);
+            return Or().WhereLike(column, value, caseSensitive, escapeCharacter);
         }
 
-        public Q OrWhereNotLike(string column, string value, bool caseSensitive = false)
+        public Q OrWhereNotLike(string column, object value, bool caseSensitive = false, string escapeCharacter = null)
         {
-            return Or().Not().WhereLike(column, value, caseSensitive);
+            return Or().Not().WhereLike(column, value, caseSensitive, escapeCharacter);
         }
-        public Q WhereStarts(string column, string value, bool caseSensitive = false)
+        public Q WhereStarts(string column, object value, bool caseSensitive = false, string escapeCharacter = null)
         {
             return AddComponent("where", new BasicStringCondition
             {
@@ -263,27 +264,28 @@ namespace SqlKata
                 Column = column,
                 Value = value,
                 CaseSensitive = caseSensitive,
+                EscapeCharacter = escapeCharacter,
                 IsOr = GetOr(),
                 IsNot = GetNot(),
             });
         }
 
-        public Q WhereNotStarts(string column, string value, bool caseSensitive = false)
+        public Q WhereNotStarts(string column, object value, bool caseSensitive = false, string escapeCharacter = null)
         {
-            return Not().WhereStarts(column, value, caseSensitive);
+            return Not().WhereStarts(column, value, caseSensitive, escapeCharacter);
         }
 
-        public Q OrWhereStarts(string column, string value, bool caseSensitive = false)
+        public Q OrWhereStarts(string column, object value, bool caseSensitive = false, string escapeCharacter = null)
         {
-            return Or().WhereStarts(column, value, caseSensitive);
+            return Or().WhereStarts(column, value, caseSensitive, escapeCharacter);
         }
 
-        public Q OrWhereNotStarts(string column, string value, bool caseSensitive = false)
+        public Q OrWhereNotStarts(string column, object value, bool caseSensitive = false, string escapeCharacter = null)
         {
-            return Or().Not().WhereStarts(column, value, caseSensitive);
+            return Or().Not().WhereStarts(column, value, caseSensitive, escapeCharacter);
         }
 
-        public Q WhereEnds(string column, string value, bool caseSensitive = false)
+        public Q WhereEnds(string column, object value, bool caseSensitive = false, string escapeCharacter = null)
         {
             return AddComponent("where", new BasicStringCondition
             {
@@ -291,27 +293,28 @@ namespace SqlKata
                 Column = column,
                 Value = value,
                 CaseSensitive = caseSensitive,
+                EscapeCharacter = escapeCharacter,
                 IsOr = GetOr(),
                 IsNot = GetNot(),
             });
         }
 
-        public Q WhereNotEnds(string column, string value, bool caseSensitive = false)
+        public Q WhereNotEnds(string column, object value, bool caseSensitive = false, string escapeCharacter = null)
         {
-            return Not().WhereEnds(column, value, caseSensitive);
+            return Not().WhereEnds(column, value, caseSensitive, escapeCharacter);
         }
 
-        public Q OrWhereEnds(string column, string value, bool caseSensitive = false)
+        public Q OrWhereEnds(string column, object value, bool caseSensitive = false, string escapeCharacter = null)
         {
-            return Or().WhereEnds(column, value, caseSensitive);
+            return Or().WhereEnds(column, value, caseSensitive, escapeCharacter);
         }
 
-        public Q OrWhereNotEnds(string column, string value, bool caseSensitive = false)
+        public Q OrWhereNotEnds(string column, object value, bool caseSensitive = false, string escapeCharacter = null)
         {
-            return Or().Not().WhereEnds(column, value, caseSensitive);
+            return Or().Not().WhereEnds(column, value, caseSensitive, escapeCharacter);
         }
 
-        public Q WhereContains(string column, string value, bool caseSensitive = false)
+        public Q WhereContains(string column, object value, bool caseSensitive = false, string escapeCharacter = null)
         {
             return AddComponent("where", new BasicStringCondition
             {
@@ -319,24 +322,25 @@ namespace SqlKata
                 Column = column,
                 Value = value,
                 CaseSensitive = caseSensitive,
+                EscapeCharacter = escapeCharacter,
                 IsOr = GetOr(),
                 IsNot = GetNot(),
             });
         }
 
-        public Q WhereNotContains(string column, string value, bool caseSensitive = false)
+        public Q WhereNotContains(string column, object value, bool caseSensitive = false, string escapeCharacter = null)
         {
-            return Not().WhereContains(column, value, caseSensitive);
+            return Not().WhereContains(column, value, caseSensitive, escapeCharacter);
         }
 
-        public Q OrWhereContains(string column, string value, bool caseSensitive = false)
+        public Q OrWhereContains(string column, object value, bool caseSensitive = false, string escapeCharacter = null)
         {
-            return Or().WhereContains(column, value, caseSensitive);
+            return Or().WhereContains(column, value, caseSensitive, escapeCharacter);
         }
 
-        public Q OrWhereNotContains(string column, string value, bool caseSensitive = false)
+        public Q OrWhereNotContains(string column, object value, bool caseSensitive = false, string escapeCharacter = null)
         {
-            return Or().Not().WhereContains(column, value, caseSensitive);
+            return Or().Not().WhereContains(column, value, caseSensitive, escapeCharacter);
         }
 
         public Q WhereBetween<T>(string column, T lower, T higher)
@@ -366,6 +370,7 @@ namespace SqlKata
 
         public Q WhereIn<T>(string column, IEnumerable<T> values)
         {
+
             // If the developer has passed a string most probably he wants List<string>
             // since string is considered as List<char>
             if (values is string)
@@ -420,7 +425,7 @@ namespace SqlKata
         }
         public Q WhereIn(string column, Func<Query, Query> callback)
         {
-            var query = callback.Invoke(new Query());
+            var query = callback.Invoke(new Query().SetParent(this));
 
             return WhereIn(column, query);
         }
@@ -481,6 +486,33 @@ namespace SqlKata
             });
         }
 
+        public Q WhereSub(Query query, object value)
+        {
+            return WhereSub(query, "=", value);
+        }
+
+        public Q WhereSub(Query query, string op, object value)
+        {
+            return AddComponent("where", new SubQueryCondition<Query>
+            {
+                Value = value,
+                Operator = op,
+                Query = query,
+                IsNot = GetNot(),
+                IsOr = GetOr(),
+            });
+        }
+
+        public Q OrWhereSub(Query query, object value)
+        {
+            return Or().WhereSub(query, value);
+        }
+
+        public Q OrWhereSub(Query query, string op, object value)
+        {
+            return Or().WhereSub(query, op, value);
+        }
+
         public Q OrWhere(string column, string op, Query query)
         {
             return Or().Where(column, op, query);
@@ -499,8 +531,7 @@ namespace SqlKata
 
             // remove unneeded components
             query = query.Clone().ClearComponent("select")
-                .SelectRaw("1")
-                .Limit(1);
+                .SelectRaw("1");
 
             return AddComponent("where", new ExistsCondition
             {
@@ -541,6 +572,8 @@ namespace SqlKata
         {
             return Or().Not().WhereExists(callback);
         }
+
+
 
         #region date
         public Q WhereDatePart(string part, string column, string op, object value)
